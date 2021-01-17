@@ -51,7 +51,7 @@ class Transaction {
     const tx = new Transaction();
     tx.version = bufferReader.readInt32();
     if (tx.version === 12) {
-      tx.persentBlockHash = readSlice(32)
+      tx.persentBlockHash = bufferReader.readSlice(32)
     }
     const marker = bufferReader.readUInt8();
     const flag = bufferReader.readUInt8();
