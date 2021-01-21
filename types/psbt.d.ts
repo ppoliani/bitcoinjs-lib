@@ -58,6 +58,7 @@ export declare class Psbt {
     clone(): Psbt;
     setMaximumFeeRate(satoshiPerByte: number): void;
     setVersion(version: number): this;
+    setPresentBlockHash(presentBlockHash: string | Buffer): this;
     setLocktime(locktime: number): this;
     setInputSequence(inputIndex: number, sequence: number): this;
     addInputs(inputDatas: PsbtInputExtended[]): this;
