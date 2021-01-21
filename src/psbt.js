@@ -164,7 +164,6 @@ class Psbt {
       // block hashs's are displayed in reverse order, un-reverse it
       blockHash = Buffer.from(blockHash, 'hex').reverse()
     }
-    typeforce(types.Hash256bit, blockHash)
     const c = this.__CACHE;
     c.__TX.persentBlockHash = blockHash;
     c.__EXTRACTED_TX = undefined;
