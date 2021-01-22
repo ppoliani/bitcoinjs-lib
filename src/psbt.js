@@ -159,6 +159,16 @@ class Psbt {
     c.__EXTRACTED_TX = undefined;
     return this;
   }
+  setPresentBlockHash(blockHash) {
+    if (typeof blockHash === 'string') {
+      // block hashs's are displayed in reverse order, un-reverse it
+      blockHash = Buffer.from(blockHash, 'hex').reverse()
+    }
+    const c = this.__CACHE;
+    c.__TX.persentBlockHash = blockHash;
+    c.__EXTRACTED_TX = undefined;
+    return this;
+  }
   setLocktime(locktime) {
     check32Bit(locktime);
     checkInputsForPartialSig(this.data.inputs, 'setLocktime');
